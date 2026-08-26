@@ -1,52 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic homepage of Your Name.">
-  <link rel="icon" href="data:,">
-  <title>Your Name | Academic Homepage</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>Your Name | Academic Homepage</title>
+	<meta name="description" content="Academic homepage of Your Name, including research interests, education, experience, and selected projects.">
+	<link rel="icon" href="data:,">
+	<script src="/assets/js/theme.js"></script>
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
-<body>
-  <main>
-    <header>
-      <h1>Your Name</h1>
-      <p class="lead">Researcher in your field at Your Institution.</p>
-      <p>
-        I study a concise description of your research interests and the problems you care about.
-      </p>
-      <nav aria-label="Profiles">
-        <a href="mailto:you@example.com">Email</a>
-        <a href="https://scholar.google.com/">Google Scholar</a>
-        <a href="https://github.com/">GitHub</a>
-      </nav>
-    </header>
 
-    <section aria-labelledby="interests">
-      <h2 id="interests">Research Interests</h2>
-      <p>Research area one, research area two, and research area three.</p>
-    </section>
+<body class="home-page">
+	<main class="page-content">
+		<section id="bio" class="bio">
+			<div class="bio-header">
+				<h1 class="bio-name">Your Name</h1>
+			</div>
+			<div class="bio-content">
+				<div class="bio-text">
+					<p>I am a graduate student in Your Field at Your Institution.</p>
+					<p>My research focuses on a concise description of the problems, methods, and systems you study.</p>
+					<p>I am interested in research conversations and collaborations related to these topics.</p>
+				</div>
+				<div class="bio-photo">
+					<img src="/assets/images/portrait.svg" alt="Portrait of Your Name" width="600" height="800">
+				</div>
+			</div>
+			<div class="bio-links slash-separated">
+				<a href="mailto:you@example.com">you@example.com</a><span class="separator separator--slash" aria-hidden="true">/</span>
+				<a href="https://scholar.google.com/" target="_blank" rel="me noopener noreferrer">Google Scholar</a><span class="separator separator--slash" aria-hidden="true">/</span>
+				<a href="https://github.com/" target="_blank" rel="me noopener noreferrer">GitHub</a><span class="separator separator--slash" aria-hidden="true">/</span>
+				<a href="https://www.linkedin.com/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+			</div>
+		</section>
 
-    <section aria-labelledby="education">
-      <h2 id="education">Education</h2>
-      <article>
-        <h3>Your Institution</h3>
-        <p>Degree in Your Field · 2026–Present</p>
-      </article>
-    </section>
+		<section class="education" aria-labelledby="education">
+			<h2 id="education" class="subtitle">Education</h2>
+			<div class="entry-list entry-list--section">
+				<div class="entry-item">
+					<div class="entry-media entry-media--logo">
+						<img class="institution-logo institution-logo--square" src="/assets/images/institution.svg" alt="Your Institution logo" width="600" height="600">
+					</div>
+					<div class="entry-content">
+						<p class="entry-title">Your Institution</p>
+						<p class="entry-subtitle">Your Department</p>
+						<p class="entry-meta">Degree in Your Field</p>
+						<p class="entry-time"><time datetime="2026">2026</time>–Present</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <section aria-labelledby="work">
-      <h2 id="work">Selected Work</h2>
-      <article>
-        <h3><a href="#">Project or Publication Title</a></h3>
-        <p>A short explanation of the question, method, and result.</p>
-      </article>
-    </section>
+		<section class="experience" aria-labelledby="experience">
+			<h2 id="experience" class="subtitle">Experience</h2>
+			<div class="entry-list entry-list--section">
+				<div class="entry-item">
+					<div class="entry-media entry-media--logo">
+						<img class="institution-logo institution-logo--square" src="/assets/images/institution.svg" alt="Research organization logo" width="600" height="600">
+					</div>
+					<div class="entry-content">
+						<p class="entry-title">Research Assistant</p>
+						<p class="entry-subtitle">Laboratory or Organization</p>
+						<p class="entry-time"><time datetime="2025">2025</time>–Present</p>
+						<p class="entry-meta">One sentence describing your responsibility and contribution.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <footer>
-      <p>© 2026 Your Name</p>
-    </footer>
-  </main>
+		<section class="projects" aria-labelledby="projects">
+			<h2 id="projects" class="subtitle">Selected Project</h2>
+			<div class="entry-list entry-list--section">
+				<article class="entry-item">
+					<div class="entry-media entry-media--image">
+						<img class="entry-image" src="/assets/images/project.svg" alt="Project preview" width="960" height="540">
+					</div>
+					<div class="entry-content">
+						<p class="entry-title">Project Title</p>
+						<p class="entry-time"><time datetime="2026">2026</time></p>
+						<p class="entry-desc">A concise description of the problem, your approach, and the result.</p>
+						<div class="entry-links"><span class="entry-link-wrap">[<a class="entry-link" href="#">Project Link</a>]</span></div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<footer class="site-footer">
+			<div class="footer-meta">
+				<div class="footer-primary">
+					<div class="footer-brand">
+						<span class="footer-logo" aria-hidden="true">
+							<img class="footer-logo-art footer-logo-art--light" src="/assets/images/logo-black.svg" alt="" width="1024" height="1024">
+							<img class="footer-logo-art footer-logo-art--dark" src="/assets/images/logo-white.svg" alt="" width="1024" height="1024">
+						</span>
+						<div class="footer-signature"><span>Copyright &copy; <time datetime="2026">2026</time> Your Name</span></div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</main>
 </body>
+
 </html>

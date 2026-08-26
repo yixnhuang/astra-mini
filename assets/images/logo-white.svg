@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+  <title id="title">Astra logo</title>
+  <circle cx="512" cy="512" r="444" fill="#fff"/>
+  <path d="M512 238 722 786h-94l-48-132H444l-48 132h-94L512 238Zm0 214-42 122h84l-42-122Z" fill="#00274c"/>
+</svg>

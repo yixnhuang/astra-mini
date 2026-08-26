@@ -1,0 +1,756 @@
+/* Responsive Layout */
+
+/* Vectra: preserve the 880px reading column as the side rails collapse. */
+@media (max-width: 1419px) {
+  .vectra-breadcrumb,
+  .vectra-docs-layout {
+    max-width: 1088px;
+  }
+
+  .vectra-docs-layout {
+    grid-template-columns: 176px minmax(0, var(--docs-article-max-width));
+    gap: 0 32px;
+  }
+
+  .vectra-on-page {
+    display: none;
+  }
+}
+
+@media (max-width: 1219px) {
+  .vectra-breadcrumb,
+  .vectra-docs-layout {
+    max-width: var(--docs-article-max-width);
+  }
+
+  .vectra-breadcrumb {
+    margin-bottom: 1rem;
+  }
+
+  .vectra-docs-layout {
+    display: block;
+  }
+
+  .vectra-docs-sidebar {
+    position: static;
+    margin-bottom: 1.75rem;
+    padding: 14px;
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-subtle);
+  }
+
+  .vectra-docs-brand span {
+    display: inline;
+    margin-left: 4px;
+  }
+
+  .vectra-docs-sidebar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  .vectra-docs-sidebar li + li {
+    margin-top: 0;
+  }
+
+  .vectra-docs-sidebar nav a {
+    padding: 3px 0;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+  }
+
+  .vectra-docs-sidebar nav a[aria-current="page"] {
+    border-bottom-color: var(--color-link);
+    background: transparent;
+  }
+
+  .vectra-docs-repository {
+    margin: 11px 0 0;
+    padding-top: 10px;
+  }
+
+  .vectra-doc-article {
+    max-width: var(--docs-article-max-width);
+  }
+}
+
+/* Tablet and small desktop */
+@media (max-width: 900px) {
+  :root {
+    --body-inline-padding: 32px;
+    --body-bottom-space: 26px;
+    --page-top-space: 52px;
+    --nav-content-gap: 26px;
+    --anchor-scroll-margin: 22px;
+  }
+
+  body {
+    max-width: none;
+  }
+
+  /* Navigation */
+
+  .site-navigation {
+    min-height: 46px;
+  }
+
+  .site-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-text);
+    font: inherit;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+  }
+
+  .site-menu-icon,
+  .site-menu-icon::before,
+  .site-menu-icon::after {
+    display: block;
+    width: 14px;
+    height: 1px;
+    background: currentColor;
+    transition:
+      transform 170ms ease,
+      opacity 170ms ease;
+  }
+
+  .site-menu-icon {
+    position: relative;
+  }
+
+  .site-menu-icon::before,
+  .site-menu-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .site-menu-icon::before {
+    top: -4px;
+  }
+
+  .site-menu-icon::after {
+    top: 4px;
+  }
+
+  .site-header.is-menu-open .site-menu-icon {
+    background: transparent;
+  }
+
+  .site-header.is-menu-open .site-menu-icon::before {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .site-header.is-menu-open .site-menu-icon::after {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .site-nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    max-height: calc(100vh - 47px);
+    margin: 0;
+    padding: 12px max(var(--body-inline-padding), var(--safe-area-right)) 24px max(var(--body-inline-padding), var(--safe-area-left));
+    overflow-y: auto;
+    border-bottom: 1px solid var(--color-border-soft);
+    background: var(--color-bg);
+  }
+
+  .site-header.is-menu-open .site-nav-menu {
+    display: block;
+  }
+
+  .site-nav-item {
+    display: block;
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+
+  .site-nav-item:last-child {
+    border-bottom: 0;
+  }
+
+  .site-nav-trigger {
+    display: flex;
+    justify-content: space-between;
+    min-height: 46px;
+    padding: 0;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    transform: none;
+  }
+
+  .site-nav-trigger::before {
+    display: none;
+  }
+
+  .site-header .site-nav-trigger:hover,
+  .site-header .site-nav-trigger:focus-visible,
+  .site-header.has-open-panel .site-nav-item.is-open .site-nav-trigger {
+    transform: none;
+  }
+
+  .site-header.has-open-panel .site-nav-item.is-open .site-nav-trigger {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .site-nav-trigger::after {
+    content: "+";
+    margin-left: var(--space-md);
+    color: var(--color-text-soft);
+    font-size: var(--font-size-base);
+    font-weight: 400;
+  }
+
+  .site-nav-item.is-open .site-nav-trigger::after {
+    content: "−";
+  }
+
+  .site-nav-panel,
+  .site-nav-item.is-open .site-nav-panel {
+    position: static;
+    display: none;
+    visibility: visible;
+    border: 0;
+    background: transparent;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+  }
+
+  .site-nav-item.is-open .site-nav-panel {
+    display: block;
+  }
+
+  .site-nav-panel-inner {
+    width: 100%;
+    padding: 2px 0 20px;
+  }
+
+  .site-nav-groups {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    max-width: none;
+  }
+
+  .site-nav-group,
+  .site-nav-group--primary {
+    gap: 8px;
+  }
+
+  .site-nav-group--primary a,
+  .site-nav-group a {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  /* Beyond Academia Pages */
+
+  .ba-section {
+    margin-bottom: 22px;
+    scroll-margin-top: var(--anchor-scroll-margin);
+  }
+
+  .log-category-grid {
+    gap: 12px;
+  }
+
+  .log-category-card {
+    padding: 15px 16px;
+  }
+
+  /* Footer */
+
+  .footer-meta {
+    display: block;
+  }
+
+  .footer-primary {
+    align-items: flex-start;
+  }
+
+  .footer-theme {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: var(--space-xl);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root {
+    --body-inline-padding: 22px;
+    --body-bottom-space: 24px;
+    --page-top-space: 48px;
+    --nav-content-gap: 24px;
+    --anchor-scroll-margin: 20px;
+    --font-size-h1: 1.75rem;
+    --font-size-h2: 1.3125rem;
+    --font-size-h3: 1.125rem;
+    --font-size-name: 2.375rem;
+    --font-size-subtitle: 1rem;
+    --font-size-meta: 0.875rem;
+    --font-size-small: 0.8125rem;
+    --section-gap: 1.375rem;
+    --entry-gap: 1.25rem;
+    --footer-top-space: 2.75rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  p {
+    margin-bottom: var(--space-md);
+  }
+
+  ul,
+  ol,
+  dl {
+    padding-left: 21px;
+  }
+
+  /* Navigation */
+
+  .site-navigation {
+    min-height: 44px;
+  }
+
+  .site-nav-menu {
+    max-height: calc(100vh - 45px);
+  }
+
+  /* Shared Page Layout */
+
+  .subtitle-with-link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .subtitle-link {
+    font-size: 1.25rem;
+  }
+
+  .news .subtitle-with-link,
+  .writing .subtitle-with-link,
+  .projects .subtitle-with-link,
+  .beyond .subtitle-with-link {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-md);
+  }
+
+  .news .subtitle-with-link span,
+  .writing .subtitle-with-link span,
+  .projects .subtitle-with-link span,
+  .beyond .subtitle-with-link span {
+    min-width: 0;
+  }
+
+  .news .subtitle-link,
+  .writing .subtitle-link,
+  .projects .subtitle-link,
+  .beyond .subtitle-link {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* Shared Components: Entry System */
+
+  .entry-list {
+    gap: var(--entry-gap);
+  }
+
+  .entry-item {
+    gap: 14px;
+  }
+
+  .entry-media {
+    flex-basis: calc(var(--entry-media-ratio) - 7px);
+  }
+
+  .entry-content {
+    flex-basis: calc(var(--entry-content-ratio) - 7px);
+  }
+
+  .entry-media--logo {
+    min-height: 92px;
+    padding: 4px 12px;
+  }
+
+  .entry-image {
+    width: 100%;
+    max-width: var(--entry-image-max-width);
+  }
+
+  /* Shared Components: Record List System */
+
+  .record-list {
+    padding-left: 21px;
+  }
+
+  /* Shared Components: Institution Logos */
+
+  .institution-logo--square {
+    width: 104px;
+    max-height: 104px;
+  }
+
+  .institution-logo--wide {
+    width: 190px;
+    max-height: 68px;
+  }
+
+  .institution-logo--tall {
+    height: 104px;
+    max-height: 104px;
+  }
+
+  /* Homepage: Bio */
+
+  .bio-header {
+    margin-top: 0;
+    margin-bottom: 1.75rem;
+  }
+
+  .bio-name {
+    line-height: 1.1;
+  }
+
+  .bio-links {
+    margin-top: 0;
+  }
+
+  .bio-content {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .bio-text,
+  .bio-photo {
+    flex: none;
+    width: 100%;
+  }
+
+  .bio-photo {
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    order: -1;
+  }
+
+  .bio-photo img,
+  .portrait-toggle {
+    width: 100%;
+    max-width: 170px;
+  }
+
+  .bio-text p,
+  .entry-desc,
+  .text-content p {
+    text-align: left;
+  }
+
+  /* Beyond Academia Pages */
+
+  .ba-hero {
+    margin-bottom: var(--section-gap);
+  }
+
+  .ba-section {
+    margin-bottom: var(--section-gap);
+    scroll-margin-top: var(--anchor-scroll-margin);
+  }
+
+  .log-category-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .log-category-card {
+    padding: 15px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .log-category-card h3 {
+    margin-bottom: var(--space-xs);
+  }
+
+  /* Blog Index */
+
+  .blog-index-header {
+    margin-bottom: var(--section-gap);
+  }
+
+  .blog-entry-meta {
+    gap: 0 var(--space-md);
+  }
+
+  /* Posts */
+
+  .post-breadcrumb {
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .post-breadcrumb::-webkit-scrollbar {
+    display: none;
+  }
+
+  .post-meta {
+    gap: 0 var(--space-md);
+  }
+
+  .post-tags {
+    gap: var(--space-xs);
+  }
+
+  /* Poem / Special Content */
+
+  .poem-block {
+    align-items: center;
+    width: 100%;
+  }
+
+  .poem-line {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    column-gap: var(--space-lg);
+    width: min(100%, 520px);
+  }
+
+  .poem-line span {
+    text-align: left;
+  }
+
+  .poem-line span:first-child,
+  .poem-line span:last-child {
+    min-width: 0;
+    width: auto;
+  }
+
+  .poem-line span:last-child {
+    font-style: italic;
+  }
+
+  /* Text & Quote */
+
+  .quote {
+    padding-left: 14px;
+  }
+
+  /* Footer */
+
+  .footer-meta {
+    padding: 16px 0 0;
+  }
+
+  .footer-primary {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  :root {
+    --body-inline-padding: 16px;
+    --page-top-space: 40px;
+    --nav-content-gap: 20px;
+    --anchor-scroll-margin: 18px;
+    --font-size-h1: 1.625rem;
+    --font-size-h2: 1.25rem;
+    --font-size-h3: 1.0625rem;
+    --font-size-name: 2.125rem;
+    --section-gap: 1.25rem;
+    --entry-gap: 1.125rem;
+    --footer-top-space: 2.5rem;
+  }
+
+  /* Typography */
+
+  ul,
+  ol,
+  dl {
+    padding-left: 20px;
+  }
+
+  /* Navigation */
+
+  .site-menu-toggle span:first-child {
+    display: none;
+  }
+
+  /* Shared Page Layout */
+
+  .news .subtitle-with-link,
+  .writing .subtitle-with-link,
+  .projects .subtitle-with-link,
+  .beyond .subtitle-with-link {
+    gap: var(--space-sm);
+  }
+
+  .news .subtitle-link,
+  .writing .subtitle-link,
+  .projects .subtitle-link,
+  .beyond .subtitle-link {
+    font-size: 1.125rem;
+  }
+
+  /* Shared Components: Entry System */
+
+  .entry-list {
+    gap: var(--entry-gap);
+  }
+
+  .entry-item {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .entry-media,
+  .entry-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .entry-media {
+    justify-content: center;
+  }
+
+  .entry-media--logo {
+    min-height: 88px;
+    padding: 4px 8px;
+  }
+
+  .entry-image {
+    max-width: var(--entry-image-max-width);
+    border-radius: var(--radius-md);
+  }
+
+  /* Shared Components: Record List System */
+
+  .record-list {
+    padding-left: 20px;
+  }
+
+  /* Shared Components: Institution Logos */
+
+  .institution-logo--square {
+    width: 96px;
+    max-height: 96px;
+  }
+
+  .institution-logo--wide {
+    width: 170px;
+    max-height: 60px;
+  }
+
+  .institution-logo--tall {
+    height: 96px;
+    max-height: 96px;
+  }
+
+  /* Homepage: Bio */
+
+  .bio-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .bio-photo img,
+  .portrait-toggle {
+    max-width: 145px;
+  }
+
+  /* Beyond Academia Pages */
+
+  .ba-hero {
+    margin-bottom: var(--section-gap);
+  }
+
+  .ba-section {
+    margin-bottom: var(--section-gap);
+    scroll-margin-top: var(--anchor-scroll-margin);
+  }
+
+  .log-category-grid {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .log-category-card {
+    padding: 14px;
+    border-radius: 11px;
+  }
+
+  .log-category-card h3 {
+    font-size: var(--font-size-h3);
+  }
+
+  /* Blog Index */
+
+  .blog-index-header {
+    margin-bottom: var(--section-gap);
+  }
+
+  .blog-entry-meta {
+    font-size: var(--font-size-meta);
+  }
+
+  /* Posts */
+
+  .post-meta,
+  .post-figure figcaption {
+    font-size: var(--font-size-meta);
+  }
+
+  .post-tags span {
+    font-size: var(--font-size-meta);
+  }
+
+  /* Poem / Special Content */
+
+  .poem-line {
+    grid-template-columns: 104px minmax(0, 1fr);
+    column-gap: var(--space-md);
+    width: 100%;
+  }
+
+  .poem-line span:first-child {
+    font-size: 0.9375rem;
+  }
+
+  .poem-line span:last-child {
+    font-size: 0.875rem;
+  }
+
+  /* Footer */
+
+  .footer-meta {
+    padding: 15px 0 0;
+  }
+
+  .footer-links {
+    font-size: var(--font-size-small);
+  }
+}
