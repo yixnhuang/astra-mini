@@ -157,54 +157,6 @@
   --shadow-control-active: 0 1px 5px rgba(0, 0, 0, 0.38);
 }
 
-:root[data-theme="michigan"] {
-  color-scheme: dark;
-
-  --color-bg: #00274c;
-  --color-text: #f4f7fa;
-  --color-text-muted: #d6e2ee;
-  --color-text-soft: #b9c9d8;
-
-  --color-link: #ffcb05;
-  --color-link-hover: #e01f7c;
-  --color-link-hover-nav: #e01f7c;
-
-  --color-border: #6e879e;
-  --color-border-soft: #345674;
-
-  --color-surface: #0b355c;
-  --color-surface-subtle: rgba(255, 255, 255, 0.05);
-  --color-surface-muted: rgba(255, 255, 255, 0.15);
-
-  --color-card-border: rgba(255, 255, 255, 0.14);
-  --color-card-hover-border: rgba(255, 203, 5, 0.55);
-  --color-card-hover-bg: rgba(255, 203, 5, 0.08);
-
-  --color-highlight-text: #ff4d42;
-  --color-highlight-bg: rgba(255, 77, 66, 0.12);
-  --color-highlight-border: rgba(255, 77, 66, 0.44);
-
-  --color-definition-text: #d6e2ee;
-  --color-block-title: #ffcb05;
-  --color-info-bg: #0d3a64;
-  --color-code-bg: #082f55;
-  --color-code-command: #9fc5ff;
-  --color-code-statement: #9fe1ae;
-  --color-code-builtin: #9fc5ff;
-  --color-code-special: #ffb3b3;
-  --color-code-operator: #ffd27a;
-  --color-code-error: #ff9b9b;
-  --color-code-comment: #c0d0de;
-  --color-tag-bg: rgba(255, 255, 255, 0.13);
-  --color-tag-text: #f4f7fa;
-  --color-control-active-bg: #16456f;
-
-  --color-focus: #ffcb05;
-
-  --shadow-card-hover: 0 4px 14px rgba(0, 15, 30, 0.3);
-  --shadow-control-active: 0 1px 5px rgba(0, 15, 30, 0.42);
-}
-
 /* Base */
 
 html {
@@ -495,13 +447,11 @@ span.string > * {
   display: none;
 }
 
-:root[data-theme="dark"] .site-logo-art--light,
-:root[data-theme="michigan"] .site-logo-art--light {
+:root[data-theme="dark"] .site-logo-art--light {
   display: none;
 }
 
-:root[data-theme="dark"] .site-logo-art--dark,
-:root[data-theme="michigan"] .site-logo-art--dark {
+:root[data-theme="dark"] .site-logo-art--dark {
   display: block;
 }
 
@@ -1575,13 +1525,11 @@ span.string > * {
   display: none;
 }
 
-:root[data-theme="dark"] .footer-logo-art--light,
-:root[data-theme="michigan"] .footer-logo-art--light {
+:root[data-theme="dark"] .footer-logo-art--light {
   display: none;
 }
 
-:root[data-theme="dark"] .footer-logo-art--dark,
-:root[data-theme="michigan"] .footer-logo-art--dark {
+:root[data-theme="dark"] .footer-logo-art--dark {
   display: block;
 }
 

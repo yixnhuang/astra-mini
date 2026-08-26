@@ -10,7 +10,7 @@ The template contains one academic homepage with profile, education, experience,
 
 - One HTML page
 - Original Astra layout, typography, spacing, colors, and responsive rules
-- Automatic light and Michigan-dark appearance
+- Automatic light and dark appearance
 - Neutral SVG placeholders for personal assets
 - No framework or build step
 
