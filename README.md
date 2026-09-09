@@ -35,7 +35,8 @@ being redesigned.
 | Repository | **public** | public | private |
 | License | **CC BY-NC-SA 4.0** | CC BY-NC-SA 4.0 | non-commercial |
 
-All three carry the same licence. Mini is the one to start from.
+Mini and Lite carry the same licence; Full is private and non-commercial.
+Mini is the one to start from.
 
 ## Screenshots
 
