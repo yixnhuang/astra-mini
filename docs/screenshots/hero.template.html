@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hero</title>
+<style>
+  /* Rendered to hero.png by capture.py. Designed at 1200x560, captured at
+     deviceScaleFactor 2 for a 2400x1120 file — sharp at the ~1000px width
+     GitHub renders a README image at.
+
+     It carries its own near-black ground so it reads the same on the light and
+     the dark GitHub theme, plus a hairline frame so the image still has a
+     visible edge against GitHub's own dark background.
+
+     The window shows ONE continuous page split by a HORIZONTAL seam: above it
+     the light capture, below it the dark capture, same page and same scroll
+     position. The seam is horizontal rather than vertical because a page has
+     generous gutters between sections and almost none between words — a
+     vertical seam cuts through text and reads as a rendering fault. capture.py
+     picks both the seam position and the window height so that the seam and the
+     bottom edge each land in the page's own whitespace. The window always starts
+     at the top of the page, because that edge is already clean. It keeps working
+     when the content changes. */
+
+  :root {
+    --ground: #0b0b0d;
+    --frame: rgba(255, 255, 255, 0.08);
+    --ink: #f5f5f7;
+    --ink-muted: #a1a1a6;
+    --ink-soft: #6e6e73;
+    --accent: #0a84ff;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    width: 1200px;
+    height: 560px;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: Inter, -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 0 56px;
+    overflow: hidden;
+  }
+
+  .frame {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--frame);
+    pointer-events: none;
+  }
+
+  /* Left column ------------------------------------------------------- */
+
+  .copy { width: 380px; flex: none; }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+
+  .eyebrow span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 54px;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+
+  .lede {
+    margin: 18px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-width: 340px;
+  }
+
+  .rule {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 26px 0 20px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 9px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .meta i { font-style: normal; opacity: 0.4; }
+
+  /* The window -------------------------------------------------------- */
+
+  .window {
+    position: relative;
+    width: 660px;
+    height: __WINH__px;
+    flex: none;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+  }
+
+  .half {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .half--light { top: 0; height: __SEAM__px; background: #ffffff; }
+  .half--dark { top: __SEAM__px; bottom: 0; background: #1c1c1e; }
+
+  /* Both images are the same page scaled to the window width, so the two halves
+     line up into one continuous page. */
+  .half img { position: absolute; left: 0; width: 660px; display: block; }
+  .half--light img { top: 0; }
+  .half--dark img { top: -__SEAM__px; }
+
+  .seam {
+    position: absolute;
+    left: 0;
+    top: __SEAM__px;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.20);
+  }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div class="eyebrow">
+      <span>Astra &middot; Site template</span>
+    </div>
+    <h1>__TITLE__</h1>
+    <p class="lede">__LEDE__</p>
+    <div class="rule"></div>
+    <div class="meta">__META__</div>
+  </div>
+
+  <div class="window">
+    <div class="half half--light"><img src="home-light.png" alt=""></div>
+    <div class="half half--dark"><img src="home-dark.png" alt=""></div>
+    <div class="seam"></div>
+  </div>
+
+  <div class="frame"></div>
+</body>
+</html>

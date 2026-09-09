@@ -1,0 +1,21 @@
+# Build artefacts of docs/screenshots/capture.py.
+#
+# The PNGs the script writes ARE committed — the README links to them, and a
+# README whose images are not in the repository is a README with broken images.
+# The intermediate HTML is not: it is regenerated on every run, differs on every
+# run, and is of no use to anyone reading the repository.
+docs/screenshots/hero.html
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db

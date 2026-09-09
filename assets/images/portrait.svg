@@ -1,7 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="title description">
-  <title id="title">Portrait placeholder</title>
-  <desc id="description">A neutral placeholder for a profile portrait.</desc>
-  <rect width="600" height="800" rx="32" fill="#e9edf1"/>
-  <circle cx="300" cy="286" r="112" fill="#8e8e93"/>
-  <path d="M116 704c18-158 93-238 184-238s166 80 184 238" fill="#8e8e93"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="portrait-title portrait-desc">
+  <title id="portrait-title">Portrait placeholder</title>
+  <desc id="portrait-desc">A neutral frame standing in for a profile photograph.</desc>
+  <style>
+    :root {
+      --surface: #f5f5f7;
+      --hairline: rgba(29, 29, 31, 0.10);
+      --mark: #8e8e93;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --surface: #2c2c2e;
+        --hairline: rgba(255, 255, 255, 0.12);
+        --mark: #6c6c70;
+      }
+    }
+    .surface { fill: var(--surface); }
+    .hairline { fill: none; stroke: var(--hairline); stroke-width: 3; }
+    /* opacity on the group, never fill-opacity on each shape: per-shape opacity
+       makes every shared edge show as a pale hairline and every overlap darken. */
+    .mark { fill: var(--mark); opacity: 0.5; }
+  </style>
+
+  <!-- Corners are intentionally square: the template applies border-radius in
+       CSS, so rounding here would show through as a lighter fringe. -->
+  <rect class="surface" width="600" height="800"/>
+
+  <!-- Mark bounds x 126..474 and y 194..606: 348 x 412, centred on 300,400.
+       The bust is contained rather than bled off the bottom edge, so that all
+       three placeholders are centred marks and read as one set. It is wider
+       than it is tall so it reads as shoulders rather than as a dome. -->
+  <g class="mark">
+    <circle cx="300" cy="284" r="90"/>
+    <path d="M300 414c-96 0-174 78-174 174v8a10 10 0 0 0 10 10h328a10 10 0 0 0 10-10v-8c0-96-78-174-174-174Z"/>
+  </g>
+
+  <rect class="hairline" x="1.5" y="1.5" width="597" height="797"/>
 </svg>

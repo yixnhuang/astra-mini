@@ -1,5 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title">
-  <title id="title">Institution placeholder</title>
-  <rect width="600" height="600" rx="48" fill="#e9edf1"/>
-  <path d="M92 238 300 118l208 120v54H92v-54Zm42 98h58v118h-58V336Zm137 0h58v118h-58V336Zm137 0h58v118h-58V336ZM92 488h416v56H92v-56Z" fill="#5b6573"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="institution-title institution-desc">
+  <title id="institution-title">Institution placeholder</title>
+  <desc id="institution-desc">A neutral mark standing in for an institution or organization logo.</desc>
+  <style>
+    :root {
+      --surface: #f5f5f7;
+      --hairline: rgba(29, 29, 31, 0.10);
+      --mark: #8e8e93;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --surface: #2c2c2e;
+        --hairline: rgba(255, 255, 255, 0.12);
+        --mark: #6c6c70;
+      }
+    }
+    .surface { fill: var(--surface); }
+    .hairline { fill: none; stroke: var(--hairline); stroke-width: 3; }
+    /* opacity on the group, never fill-opacity on each shape: per-shape opacity
+       makes every shared edge show as a pale hairline and every overlap darken.
+       No two shapes here touch, so the mark composites as one flat silhouette. */
+    .mark { fill: var(--mark); opacity: 0.5; }
+  </style>
+
+  <!-- This tile has no border-radius in CSS, so it carries its own.
+       rx 54 on a 600 box shown at 112px reads as about 10px. -->
+  <rect class="surface" width="600" height="600" rx="54"/>
+
+  <!-- Mark bounds x 92..508 and y 109..491: 416 x 382, centred on 300,300.
+       Roof and architrave are ONE path. Drawn as two shapes they left a pale
+       seam along the join and a nick at each end of the roofline. -->
+  <g class="mark">
+    <path d="M300 109 508 217v34H92v-34Z"/>
+    <rect x="125" y="279" width="44" height="150" rx="5"/>
+    <rect x="227" y="279" width="44" height="150" rx="5"/>
+    <rect x="329" y="279" width="44" height="150" rx="5"/>
+    <rect x="431" y="279" width="44" height="150" rx="5"/>
+    <rect x="92" y="457" width="416" height="34" rx="7"/>
+  </g>
+
+  <rect class="hairline" x="1.5" y="1.5" width="597" height="597" rx="52.5"/>
 </svg>
